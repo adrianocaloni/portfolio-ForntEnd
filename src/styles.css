@@ -1,1 +1,163 @@
-/* You can add global styles to this file, and also import other style files */
+.mat-card{
+    border-radius: 10px;
+    margin: 5px 10px;
+    padding: 20px;
+    border-color: #000000;
+  }
+
+  .mat-card#first-card{
+    padding: 0;
+  }
+  
+  div#profile-background{
+    display:flex;
+    z-index: 1;
+ 
+  }
+ 
+  .profile-image{
+    position: sticky;
+    border-radius:50%;
+    width: 152px;
+    height: 152px;
+    margin-top: -110px;
+    z-index: 1;
+    margin-left: 10px;
+
+  }
+  div#info-actions {
+    display: flex;
+  }
+  div#info-actions button{
+    margin-right: 8px;
+  }
+  div#info-contact span{
+    font-size:1rem;
+    font-weight: 400;
+  }
+  div#info-contact span a{
+    color:#0a66c2;
+    touch-action: manipulation;
+    text-decoration: none;
+  }
+  div#info-titulo{
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  div#info-data{
+    display:flex;
+    justify-content: space-between;
+    margin-left:10px;
+  }
+  div#info-data h1{
+    font-size: 1.8rem;
+    display:inline;
+    font-weight: 500;
+    line-height: 1.25;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+  
+
+  
+  button.btn.btn-outline-primary {
+    margin: 15px;
+    /* margin-bottom: 10px; */
+  }
+  .btn.btn-primary-edit.me-md-2 {
+    background: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+    padding: 0.1%;
+    position: static;
+    margin-left: 98%;
+    margin-top: -100px;
+  }
+  
+  div#info-red{
+    display:flex;
+    justify-content: space-between;
+    margin:0px;
+  }
+  div#info-red ul#info-redes{
+    width: 250px;
+    list-style: none;
+    flex-shrink: 0;
+  }
+  div#info-red ul#info-redes li a {
+    color: rgb(0, 0, 0);
+    display: flex;
+    text-decoration: none;
+    float: left; 
+  }   
+  div#info-red ul#info-redes li a img {
+    width:32px;
+    height:32px;
+    margin-right:8px;
+  }
+  button.btn.btn-outline-primary {
+    position: absolute;
+    margin-top: -1px;
+  }
+  div#info-red div#argentinaPrograma img{
+    width:242px;
+    height:92px;
+  }
+
+  .info-experiencia{
+    list-style: none;
+  
+  }
+
+  .info-experiencia img {
+    width:120px;
+    height:100px;
+  }
+  
+
+img.redes{
+  width: 50px;
+    height: 50px
+}
+
+img#fotoTrabEstProList {
+  border: 5px outset;
+  border-color: #e1e1e1;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+
+.fotoTrabEstProList{
+  border: 5px outset;
+  border-color: #e1e1e1;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+
+div#profile-background img{
+  width: 99%;
+  border: 2px outset;
+  border-color: #e1e1e1;
+  border-radius: 15px;
+  height:450px;
+  
+
+}
+.container-fluid {
+  position:relative;      
+  box-shadow: 0 10px 6px -1px #777;
+
+}
+h5.card-title {
+  font-family: monospace;
+}
+
+#datosCabecera{
+  font-size: 20px;
+}
+
+span.navbar-brand {
+  font-size: 32px;
+}

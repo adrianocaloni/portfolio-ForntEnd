@@ -1,0 +1,141 @@
+
+<div id="info-data" >
+    <div *ngFor="let perfil of perfil">
+        <div id="info-img">
+            <img class="profile-image card-img-top" [src]="perfil.urlImage"  alt="perfil">
+            <div  *ngIf="loading">
+                <i id="btnEditar" class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#perfiFotolModal" ></i>
+            </div>
+            
+        </div>
+        <div *ngIf="loading" class="d-grid gap-2 d-md-flex justify-content-md-end" >
+            <i id="btnEditar" class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#perfilModal" ></i>
+       
+        </div>
+        <div>
+
+            
+        </div>
+            <h1>{{perfil.nombre}} {{perfil.apellido}}</h1> <i class="bi-pencil-square"  style="font-size: 2rem"> </i>
+
+        <div id="info-titulo">{{perfil.titulo}}</div><br/>
+        <div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+                        <span id="datosCabecera"> <i class="fa fa-mail-reply-all"></i> {{perfil.email}}</span>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+                        <span id="datosCabecera"> <i class="fa fa-mobile-phone"></i> {{perfil.celular}}</span>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+                        <span id="datosCabecera"> <i class="fa fa-location-arrow"></i> {{perfil.localidad}}</span>
+                    </div>
+
+            <div class="card-titles">
+                <h4>Acerca de mí:</h4>
+            </div>
+           <p id="text-acercade"> {{perfil.descripcion}}</p> 
+        </div>
+
+            <!-- Modal Foto Perfíl:-->
+            <div class="modal fade" id="perfiFotolModal" tabindex="-1" aria-labelledby="perfilFotoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="perfilModalLabel">Foto de Perfíl</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row mb-3 d-flex justify-content-center">
+                            <div class="form-floating">
+                                <input type="text" name="texto" id="fotoPerfil" 
+                                [(ngModel)]="perfil.urlImage" 
+                                class="form-control " />
+                                <label for="floatingInput">Foto de Perfíl</label>
+                            </div >
+                            </div>
+                            <div class="modal-footer">
+                                <div class="d-grid gap-2 col-4 mx-auto">
+                                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close" (click)="updatePerfil(perfil, perfil.id)">Guardar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Modal Acerca de:-->
+            <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="perfilModalLabel">Información de Contacto</h5> 
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row mb-3 d-flex justify-content-center">
+                            <div class="form-floating">
+                                <input type="text" name="nombre" id="textoExperiencia" 
+                                [(ngModel)]="perfil.nombre" 
+                                class="form-control " />
+                                <label for="floatingInput">Nombre</label>
+                            </div >
+                            </div>
+
+                           <div class="row mb-3 d-flex justify-content-center" >
+                            <div class="form-floating">
+                                <input type="text" name="apellido" id="fechaExperiencia"
+                                    [(ngModel)]="perfil.apellido" 
+                                    class="form-control" />
+                                    <label for="floatingInput">Apellido</label>
+                            </div> 
+                            </div>
+                            <div class="row mb-3 d-flex justify-content-center" >
+                                <div class="form-floating">
+                                    <input type="text" name="celular" id="fechaExperiencia"
+                                        [(ngModel)]="perfil.celular" 
+                                        class="form-control" />
+                                        <label for="floatingInput">Celular</label>
+                                </div> 
+                            </div>
+                            <div class="row mb-3 d-flex justify-content-center" >
+                                <div class="form-floating">
+                                    <input type="text" name="email" id="fechaExperiencia"
+                                        [(ngModel)]="perfil.email" 
+                                        class="form-control" />
+                                        <label for="floatingInput">Email</label>
+                                </div> 
+                            </div>
+                            <div class="row mb-3 d-flex justify-content-center" >
+                                <div class="form-floating">
+                                    <input type="text" name="localidad" id="fechaExperiencia"
+                                        [(ngModel)]="perfil.localidad" 
+                                        class="form-control" />
+                                        <label for="floatingInput">Localidad</label>
+                                </div> 
+                            </div>
+                            <div class="row mb-3 d-flex justify-content-center">
+                            <div class="form-floating">
+                                <textarea type="text" name="fecha" id="horaExperiencia"
+                                    [(ngModel)]="perfil.descripcion" 
+                                    class="form-control "></textarea>
+                                    <label for="floatingInput"> Descripción</label>
+                            </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="d-grid gap-2 col-4 mx-auto">
+                                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close" (click)="updatePerfil(perfil, perfil.id)">Guardar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>       
+    </div>
+
+</div>
+
+

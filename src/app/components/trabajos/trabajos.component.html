@@ -1,0 +1,10 @@
+<app-trabajo-header [loading]="loading" (onGuardarTrabajo)="agregarTrabajo($event)"></app-trabajo-header><br>
+
+<app-trabajo-list *ngFor="let trabajo of trabajos"
+                [trabajo]="trabajo"
+                [loading]="loading"
+                (onEliminarTrabajo)="eliminarTrabajo(trabajo)"
+                (onEditarTrabajo)="editarTrabajo(trabajo, trabajo.id)"
+              >
+                
+</app-trabajo-list>

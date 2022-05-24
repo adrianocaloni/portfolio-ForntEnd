@@ -1,0 +1,12 @@
+<app-proyecto-header [loading]="loading" (onGuardarProyecto)="agregarProyecto($event)"></app-proyecto-header><br>
+
+<app-proyecto-list *ngFor="let proyecto of proyectos"
+                [loading]="loading"
+                [proyecto]="proyecto"
+                (onEliminarProyecto)="eliminarProyecto(proyecto)"
+                (onEditarProyecto)="editarProyecto(proyecto, proyecto.id)"
+                
+              >
+                
+</app-proyecto-list>
+

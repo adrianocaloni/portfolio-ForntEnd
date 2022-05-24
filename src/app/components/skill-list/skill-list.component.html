@@ -1,0 +1,83 @@
+
+<div clas="form"> 
+
+      <div class="card border-secondary mb-3">
+        <div >
+        <div class="card-header">
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="loading">
+            <i class="fa fa-trash-o btn btn-outline-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+skill.id+'borrarSkill'" ></i>
+              <i class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+skill.id+'Skill'"></i>
+          </div>
+          <h5 class="card-title"> {{skill.name_skill}}</h5>
+         </div>
+        <div class="card-body text-secondary">
+          <div class="progress-bar progress-bar-success" role="progressbar" [ngStyle]="{'width.%':skill.porcentaje}">
+            <span>{{skill.porcentaje}}</span>
+          </div>
+        </div>
+      </div>
+
+  <!-- Modal -->
+  <div class="modal fade" [id]="'Modal'+skill.id+'Skill'" tabindex="-1" aria-labelledby="skillModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" [id]="'Modal'+skill.id+'Skill'">{{skill.name_skill}}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form class="card mat-card experiencia" >
+                  <div class="row mb-3 d-flex justify-content-center">
+                    <div class="form-floating">
+                      <input type="text" name="texto" id="trabajoEmp" 
+                      [(ngModel)]="skill.name_skill" 
+                      class="form-control " />
+                      <label for="floatingInput">Skill</label>
+                    </div >
+                  </div>
+  
+                  <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <input type="text" name="text" id="trabajoCargo"
+                            [(ngModel)]="skill.porcentaje" 
+                            class="form-control" />
+                            <label for="floatingInput">Porcentaje</label>
+                    </div>
+                  </div>
+                 
+                  <div class="d-grid gap-2 col-4 mx-auto">
+  
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close"(click)="onGuardar(skill)">Guardar</button>
+                  
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal Borrar -->
+  <div class="modal fade" [id]="'Modal'+skill.id+'borrarSkill'" tabindex="-1" aria-labelledby="skillModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" [id]="'Modal'+skill.id">¿Seguro que quiere eliminar ?</h5>
+  
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h5 [id]="'Modal'+skill.id">{{skill.name_skill}}</h5>
+          <div [id]="'Modal'+skill.id" class="progress-bar progress-bar-success" role="progressbar" [ngStyle]="{'width.%':skill.porcentaje}">
+              {{skill.porcentaje}}
+            </div>
+        </div>
+            
+          <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" (click)="onEliminar(skill)">Aceptar</button>
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+  

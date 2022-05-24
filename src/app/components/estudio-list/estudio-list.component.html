@@ -1,0 +1,132 @@
+
+<div clas="form">
+  <hr> 
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="loading" >
+        <i class="fa fa-trash-o btn btn-outline-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+estudio.id+'borrar'" ></i>
+        <i class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+estudio.id+'Estudios'"></i>
+    </div>
+    <div id="info-exp">
+          
+            <ul class="info-experiencia">
+                <li>          
+                  
+                    <img id="fotoTrabEstProList" [src]="estudio.urlImage">
+
+                    <div class="titulo-exp-per">
+                        <h4>{{ estudio.name_esc }}</h4>
+                        <h5>{{ estudio.title }}</h5>
+                        <p>{{ estudio.dateStart }} - {{ estudio.dateEnd }}</p>
+                    </div>
+               
+                    <ul class="exp-descripcion">
+                            <li>
+                                {{estudio.description}}<br>
+                                <ul>
+                                  <li>{{estudio.tecnologias}}</li>
+                                </ul>
+                            </li>
+                    </ul>
+                </li>
+            </ul>
+            <hr>
+    
+</div>
+
+<!-- Modal -->
+<div class="modal fade" [id]="'Modal'+estudio.id+'Estudios'" tabindex="-1" aria-labelledby="skillModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" [id]="'Modal'+estudio.id+'Estudios'">{{estudio.name_esc}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="card mat-card experiencia" >
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="nombre" id="trabajoEmp" 
+                    [(ngModel)]="estudio.name_esc" 
+                    class="form-control " />
+                    <label for="floatingInput">Institución</label>
+                  </div >
+                </div>
+
+                <div class="row mb-3 d-flex justify-content-center" >
+                  <div class="form-floating">
+                    <input type="text" name="titulo" id="trabajoCargo"
+                          [(ngModel)]="estudio.title" 
+                          class="form-control" />
+                          <label for="floatingInput">Titulo</label>
+                  </div>
+                </div>
+                
+                <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <input type="text" name="dateStart" id="trabajoCargo"
+                            [(ngModel)]="estudio.dateStart" 
+                            class="form-control" />
+                            <label for="floatingInput">Fecha Inicio</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <input type="text" name="dateEnd" id="trabajoCargo"
+                            [(ngModel)]="estudio.dateEnd" 
+                            class="form-control" />
+                            <label for="floatingInput">Fecha Fin</label>
+                    </div>
+                  </div>
+
+                  
+                  <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <textarea type="text" name="dsc" id="trabajoCargo"
+                            [(ngModel)]="estudio.description" 
+                            class="form-control" ></textarea>
+                            <label for="floatingInput">Descripción</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <textarea type="text" name="tecnologias" id="trabajoCargo"
+                            [(ngModel)]="estudio.tecnologias" 
+                            class="form-control" ></textarea>
+                            <label for="floatingInput">Tecnologías</label>
+                    </div>
+                  </div>
+               
+                <div class="d-grid gap-2 col-4 mx-auto">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close"(click)="onGuardar(estudio)">Guardar</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Borrar -->
+<div class="modal fade" [id]="'Modal'+estudio.id+'borrar'" tabindex="-1" aria-labelledby="estudiosModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [id]="'Modal'+estudio.id">¿Seguro que quiere eliminar ?</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img class="fotoTrabEstProList" [id]="'Modal'+estudio.id" [src]="estudio.urlImage" width="150"><br>
+        <h5 [id]="'Modal'+estudio.id">{{estudio.name_esc}}</h5>
+        <p [id]="'Modal'+estudio.id">{{estudio.title}}</p>
+      </div>
+          
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" (click)="onEliminar(estudio)">Aceptar</button>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+        </div>
+          
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand">
+         Experiencia Laboral
+      </span>
+      <div *ngIf="loading">
+          <i class="fa fa-plus-circle btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModalUno"></i>
+      </div>
+     
+    </div>
+  </nav>
+
+  <div class="modal fade" id="exampleModalUno" tabindex="-1" aria-labelledby="exampleModalUnoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalUnoLabel">Agregar Experiencia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="card mat-card experiencia">
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="texto" id="textoExperiencia" 
+                    [(ngModel)]="name_job" 
+                    class="form-control " />
+                    <label for="floatingInput">Empresa</label>
+                  </div >
+                </div>
+
+                <div class="row mb-3 d-flex justify-content-center" >
+                  <div class="form-floating">
+                    <input type="text" name="text" id="fechaExperiencia"
+                          [(ngModel)]="cargo" 
+                          class="form-control" />
+                          <label for="floatingInput">Puesto / Cargo</label>
+                  </div>
+                </div>
+               
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="fecha" id="horaExperiencia" 
+                          [(ngModel)]="date_start" 
+                          class="form-control " />
+                          <label for="floatingInput"> Fecha Inicio</label>
+                  </div>
+                </div>
+
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="fecha" id="horaExperiencia"
+                          [(ngModel)]="date_end" 
+                          class="form-control " />
+                          <label for="floatingInput"> Fecha Fin</label>
+                  </div>
+                </div>
+
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="dsc" id="horaExperiencia"
+                          [(ngModel)]="description" 
+                          class="form-control " />
+                          <label for="floatingInput"> Descripción</label>
+                  </div>
+                </div>
+                
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="dsc" id="horaExperiencia"
+                          [(ngModel)]="urlImage" 
+                          class="form-control " />
+                          <label for="floatingInput"> Foto</label>
+                  </div>
+                </div>
+
+                <div class="d-grid gap-2 col-4 mx-auto">
+                  <button  class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close" (click)="onSubmit()">Guardar</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

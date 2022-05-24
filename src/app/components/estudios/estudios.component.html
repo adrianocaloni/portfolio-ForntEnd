@@ -1,0 +1,11 @@
+<app-estudio-header [loading]="loading" (onGuardarEstudio)="agregarEstudio($event)"></app-estudio-header><br>
+
+<app-estudio-list [loading]="loading" 
+                *ngFor="let estudio of estudios"
+                [estudio]="estudio"
+                (onEliminarEstudio)="eliminarEstudio(estudio)"
+                (onUpdateEstudio)="updateEstudio(estudio, estudio.id)"
+              >
+              
+
+</app-estudio-list>

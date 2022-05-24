@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand">
+        Hard & Soft Skills
+      </span>
+      <div *ngIf="loading">
+        <i class="fa fa-plus-circle btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#skillModalUno"></i>
+      </div>
+      
+    </div>
+  </nav>
+
+  <div class="modal fade" id="skillModalUno" tabindex="-1" aria-labelledby="skillModalUnoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="skillModalUnoLabel">Agregar Hard & Soft Skills</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="card mat-card experiencia">
+
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="fecha" id="horaExperiencia" 
+                          class="form-control " 
+                          [(ngModel)]="name_skill" />
+
+                          <label for="floatingInput"> Habilidad</label>
+                  </div>
+                </div>
+
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="dsc" id="horaExperiencia"          
+                          class="form-control " 
+                          [(ngModel)]="porcentaje" />
+                          <label for="floatingInput"> Porcentaje</label>
+                  </div>
+                </div>  
+
+                <div class="d-grid gap-2 col-4 mx-auto">
+                  <button  class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close" (click)="onSubmit()">Guardar</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

@@ -1,0 +1,135 @@
+<div class="card mat-card">
+    <div id="info-red">
+        <div id="argentinaPrograma">
+            <img src="./assets/argentina.jpg">
+        </div> 
+
+            <ul id="info-redes">
+                <li><a href="https://www.linkedin.com/in/adriano-jeremias-caloni/" target="_blank">
+                    <img class ="redes" src="./assets/icons8-linkedin-64.png">
+                </a></li>
+                <li><a href="https://www.instagram.com/adriano_jere.c/"  target="_blank">
+                    <img class ="redes" src="./assets/800px-Instagram-Icon.png">
+                </a></li>
+                <li><a href="https://twitter.com/AdrianoCaloni"  target="_blank">
+                    <img class ="redes" src="./assets/icons8-twitter-64.png">
+                </a></li>
+                <li>
+                    
+                    <i class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#ModalInicioSesion" *ngIf="!loading">Ingresar</i>  
+                </li>
+                <li>
+                    <diV  *ngIf="loading" >
+                        <i class="btn btn-outline-secondary" (click)="logout()">Salir</i>  
+                    </diV>
+                    <div class="row" *ngIf="errorInicio">    
+                        <label class="float-right" style="color:red;">Usuario o password incorrecto</label>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>  
+        
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="btnEidt" *ngIf="loading" >
+                <i class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#portadaFotolModal"></i> 
+            </div><br><br><br><br><br>
+            <div *ngFor="let perfil of perfil">
+
+                <div id="profile-background">
+                    <img class="profile-image card-img-top card-img-top" [src]="perfil.urlImagePortada"  alt="perfil" alt="portada"> 
+                
+            </div>
+    
+    
+   <div class="card mat-card experiencia">
+        <app-perfil [loading]="loading"></app-perfil>
+    </div>
+    
+    <div class="card mat-card experiencia">
+        <app-trabajos [loading]="loading"></app-trabajos>
+    </div>
+    <div class="card mat-card experiencia">
+        <app-estudios [loading]="loading" ></app-estudios>
+    </div>
+    
+    <div class="card mat-card experiencia">
+        <app-skills  [loading]="loading"></app-skills>
+    </div>
+    <div class="card mat-card experiencia">
+        <app-proyectos [loading]="loading"></app-proyectos>
+    </div>
+    
+    
+<!-- Modal Inicio Sesion -->
+<div class="modal fade" id="ModalInicioSesion" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form (ngSubmit)="login()" id="login">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" 
+                         [(ngModel)]="user.user" [ngModelOptions]="{standalone: true}"
+                         placeholder="Email" class="form-control" required/>
+        
+                    </div>
+                </div><br>
+        
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="password" 
+                         [(ngModel)]="user.pass" [ngModelOptions]="{standalone: true}"
+                         placeholder="Password" class="form-control" required/>
+        
+                    </div>
+                    <div class="row" *ngIf="errorInicio">    
+                        <label class="float-right" style="color:red;">Usuario o password incorrecto</label>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input class="btn btn-success float-right" type="submit"  data-bs-dismiss="modal" value="Ingesar">
+                    </div>
+                </div>
+
+            </form>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Foto Portada:-->
+<div class="modal fade" id="portadaFotolModal" tabindex="-1" aria-labelledby="portadaFotoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="perfilModalLabel">Editar Imágen de Portada</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row mb-3 d-flex justify-content-center">
+                    <div class="form-floating">
+                        <input type="text" name="fotoPortada" id="fotoPortada" 
+                        [(ngModel)]="perfil.urlImagePortada" 
+                            class="form-control " />
+                            <label for="floatingInput">Imágen de Portada</label>
+                    </div >
+                    </div>
+                    <div class="row">
+                        <div class="modal-footer">
+                            <div class="d-grid gap-2 col-4 mx-auto">
+                                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close" (click)="updatePortadaPerfil(perfil, perfil.id)">Guardar</button>
+                            </div>
+                        </div>   
+                    </div>
+                </form>
+            </div>
+    </div>
+    </div>
+</div>
+</div>

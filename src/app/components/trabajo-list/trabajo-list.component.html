@@ -1,0 +1,127 @@
+
+<div clas="form"> 
+  <hr>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="loading" >
+        <i class="fa fa-trash-o btn btn-outline-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+trabajo.id+'borrarTrabajo'" ></i>
+        <i id="btnEditar" class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+trabajo.id"></i>
+    </div>
+
+    <div id="info-exp">
+            <ul class="info-experiencia">
+                <li>          
+                    <img id="fotoTrabEstProList" [src]="trabajo.urlImage">
+
+                    <div class="titulo-exp-per ">
+                        <h4>{{ trabajo.name_job }}</h4>
+                        <h5>{{ trabajo.cargo }}</h5>
+                        <p>{{ trabajo.date_start }} - {{ trabajo.date_end }}</p>
+                    </div>
+               
+                    <ul class="exp-descripcion">
+                            <li>
+                                {{trabajo.description}}<br>
+                            </li>
+                    </ul>
+                </li>
+            </ul>
+        <hr>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" [id]="'Modal'+trabajo.id" tabindex="-1"  aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" [id]="'Modal'+trabajo.id">{{trabajo.name_job}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="card mat-card experiencia" >
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="empresa"
+                    [(ngModel)]="trabajo.name_job" 
+                    class="form-control " />
+                    <label for="floatingInput">Empresa</label>
+                  </div >
+                </div>
+
+                <div class="row mb-3 d-flex justify-content-center" >
+                  <div class="form-floating">
+                    <input type="text" name="cargo" 
+                          [(ngModel)]="trabajo.cargo" 
+                          class="form-control" />
+                          <label for="floatingInput">Puesto / Cargo</label>
+                  </div>
+                </div>
+               
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="fechaStart"
+                          [(ngModel)]="trabajo.date_start" 
+                          class="form-control " />
+                          <label for="floatingInput"> Fecha Inicio</label>
+                  </div>
+                </div>
+
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="fechaEnd"
+                          [(ngModel)]="trabajo.date_end" 
+                          class="form-control " />
+                          <label for="floatingInput"> Fecha Fin</label>
+                  </div>
+                </div>
+
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <textarea  type="text" name="dsc"
+                    [(ngModel)]="trabajo.description" 
+                     class="form-control"></textarea>
+                          <label for="floatingInput"> Descripción</label>
+                  </div>
+                </div>
+                
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="foto" id="trabajoImg"
+                          [(ngModel)]="trabajo.urlImage"
+                          class="form-control " />
+                          <label for="floatingInput"> Foto</label>
+                  </div>
+                </div>
+
+                <div class="d-grid gap-2 col-4 mx-auto">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close"  (click)="onGuardar(trabajo)">Guardar</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Borrar -->
+<div class="modal fade" [id]="'Modal'+trabajo.id+'borrarTrabajo'" tabindex="-1" aria-labelledby="trabajoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [id]="'Modal'+trabajo.id">¿Seguro que quiere eliminar ?</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img  class="fotoTrabEstProList" [id]="'Modal'+trabajo.id" [src]="trabajo.urlImage" width="150"><br>
+        <h5 [id]="'Modal'+trabajo.id">{{trabajo.name_job}}</h5>
+        <p [id]="'Modal'+trabajo.id">{{trabajo.cargo}}</p>
+      </div>
+          
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" (click)="onEliminar(trabajo)">Aceptar</button>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+        </div>
+          
+      </div>
+    </div>
+  </div>

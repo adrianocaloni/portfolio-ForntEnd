@@ -1,0 +1,163 @@
+
+
+<div clas="form"> 
+  <hr>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="loading">
+      <i class="fa fa-trash-o btn btn-outline-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+proyecto.id+'borrarProyecto'" ></i>
+        <i class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+proyecto.id+'Proyecto'"></i>
+        
+       
+    </div>
+    <div id="info-exp">
+            <ul class="info-experiencia">
+                <li>          
+                  
+                    <img id="fotoTrabEstProList" [src]="proyecto.urlImage">
+  
+                    <div class="titulo-exp-per">
+                        <h4>{{ proyecto.name }}</h4>
+                        <h5>{{ proyecto.motivo }}</h5>
+                        <p>{{ proyecto.date_start }} - {{ proyecto.date_end }}</p>
+                    </div>
+  
+                    <div class="container">
+                      <div class="row">
+                        {{proyecto.description}}
+                        <div class="col-sm"><br>
+                              <h5>Portfolio Web</h5>
+                              <a [href]="proyecto.portfolio" target="_blank" ><img class ="redes" [src]="proyecto.urlImagePort"></a>
+                        </div>
+                        <div class="col-sm"><br>
+                            <h5>Presentación</h5>
+                            <a [href]="proyecto.presentacion" target="_blank"><img class ="redes" [src]="proyecto.urlImageVideo"></a>
+                        </div>
+                        <div class="col-sm"><br>
+                              <h5>Instagram</h5>
+                              <a [href]="proyecto.redes" target="_blank"><img class ="redes" [src]="proyecto.urlImageRedes"></a>
+                        </div>
+                      </div>
+                    </div>    
+                        
+                </li>
+            </ul>
+        <hr>
+    
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" [id]="'Modal'+proyecto.id+'Proyecto'" tabindex="-1" aria-labelledby="proyectosModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" [id]="'Modal'+proyecto.id+'Proyecto'">{{proyecto.name}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="card mat-card experiencia" >
+                <div class="row mb-3 d-flex justify-content-center">
+                  <div class="form-floating">
+                    <input type="text" name="nombre" id="trabajoEmp" 
+                    [(ngModel)]="proyecto.name" 
+                    class="form-control " />
+                    <label for="floatingInput">Nombre</label>
+                  </div >
+                </div>
+  
+                <div class="row mb-3 d-flex justify-content-center" >
+                  <div class="form-floating">
+                    <input type="text" name="motivo" id="trabajoCargo"
+                          [(ngModel)]="proyecto.motivo" 
+                          class="form-control" />
+                          <label for="floatingInput">Motivo</label>
+                  </div>
+                </div>
+                
+                <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <textarea class="form-control"type="text" name="dsc" id="trabajoCargo"
+                            [(ngModel)]="proyecto.description" 
+                            class="form-control" > </textarea>
+                            <label for="floatingInput">Descripción</label>
+                    </div>
+                  </div>
+  
+                  <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <input type="text" name="dateStart" id="trabajoCargo"
+                            [(ngModel)]="proyecto.date_start" 
+                            class="form-control" />
+                            <label for="floatingInput">Fecha Inicio</label>
+                    </div>
+                  </div>
+  
+                  
+                  <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <input type="text" name="dateEnd" id="trabajoCargo"
+                            [(ngModel)]="proyecto.date_end"
+                            class="form-control" >
+                            <label for="floatingInput">Fecha Fin</label>
+                    </div>
+                  </div>
+  
+                  <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <input type="text" name="portfolio" id="trabajoCargo"
+                            [(ngModel)]="proyecto.portfolio" 
+                            class="form-control" >
+                            <label for="floatingInput">Portfolio</label>
+                    </div>
+                  </div>
+  
+                  
+                  <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <textarea type="text" name="presentación" id="trabajoCargo"
+                            [(ngModel)]="proyecto.presentacion" 
+                            class="form-control" ></textarea>
+                            <label for="floatingInput">Video</label>
+                    </div>
+                  </div>
+  
+                  
+                  <div class="row mb-3 d-flex justify-content-center" >
+                    <div class="form-floating">
+                      <input type="text" name="instagram" id="trabajoCargo"
+                            [(ngModel)]="proyecto.redes" 
+                            class="form-control" >
+                            <label for="floatingInput">Instagram</label>
+                    </div>
+                  </div>
+               
+                <div class="d-grid gap-2 col-4 mx-auto">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close"(click)="onGuardar(proyecto)">Guardar</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Modal Borrar -->
+    <div class="modal fade" [id]="'Modal'+proyecto.id+'borrarProyecto'" tabindex="-1" aria-labelledby="skillModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" [id]="'Modal'+proyecto.id">¿Seguro que quiere eliminar ?</h5>
+    
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img  class="fotoTrabEstProList" [id]="'Modal'+proyecto.id" [src]="proyecto.urlImage" width="150"><br>
+            <h5 [id]="'Modal'+proyecto.id">{{proyecto.name}}</h5>
+            <p [id]="'Modal'+proyecto.id">{{proyecto.motivo}}</p>
+          </div>
+              
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" (click)="onEliminar(proyecto)">Aceptar</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+            </div>
+              
+          </div>
+        </div>
+      </div>
+    

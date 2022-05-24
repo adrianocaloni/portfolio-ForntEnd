@@ -1,0 +1,11 @@
+<app-skill-header [loading]="loading" (onGuardarSkill)="agregarSkill($event)"> </app-skill-header><br>
+
+<app-skill-list [loading]="loading" *ngFor="let skill of skills"
+                
+                [skill]="skill"
+                (onEliminarSkill)="eliminarSkill(skill)"
+                (onEditarSkill)="editarSkill(skill, skill.id)"
+                
+              >
+                
+</app-skill-list>
