@@ -6,27 +6,23 @@
         <i id="btnEditar" class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+trabajo.id"></i>
     </div>
 
-    <div id="info-exp">
-            <ul class="info-experiencia">
-                <li>          
-                    <img id="fotoTrabEstProList" [src]="trabajo.urlImage">
-
-                    <div class="titulo-exp-per ">
-                        <h4>{{ trabajo.name_job }}</h4>
-                        <h5>{{ trabajo.cargo }}</h5>
-                        <p>{{ trabajo.date_start }} - {{ trabajo.date_end }}</p>
-                    </div>
-               
-                    <ul class="exp-descripcion">
-                            <li>
-                                {{trabajo.description}}<br>
-                            </li>
-                    </ul>
-                </li>
-            </ul>
-        <hr>
+            <div class="container">
+              <div class="row justify-content-start">
+                <div class="col-2">
+                  <img  id="fotoTrabEstProList" [src]="trabajo.urlImage">
+                </div>
+                <div class="col-6">
+                  <h4>{{ trabajo.name_job }}</h4>
+                  <h5>{{ trabajo.cargo }}</h5>
+                  <p>{{ trabajo.date_start }} - {{ trabajo.date_end }}</p>        
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-9">
+                    {{trabajo.description}}
+                  </div>
+              </div>
     </div>
-</div>
+    <hr>
 
 
 <!-- Modal -->

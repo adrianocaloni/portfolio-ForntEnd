@@ -5,32 +5,32 @@
         <i class="fa fa-trash-o btn btn-outline-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+estudio.id+'borrar'" ></i>
         <i class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+estudio.id+'Estudios'"></i>
     </div>
-    <div id="info-exp">
-          
-            <ul class="info-experiencia">
-                <li>          
-                  
-                    <img id="fotoTrabEstProList" [src]="estudio.urlImage">
-
-                    <div class="titulo-exp-per">
-                        <h4>{{ estudio.name_esc }}</h4>
-                        <h5>{{ estudio.title }}</h5>
-                        <p>{{ estudio.dateStart }} - {{ estudio.dateEnd }}</p>
-                    </div>
-               
-                    <ul class="exp-descripcion">
-                            <li>
-                                {{estudio.description}}<br>
-                                <ul>
-                                  <li>{{estudio.tecnologias}}</li>
-                                </ul>
-                            </li>
-                    </ul>
-                </li>
-            </ul>
-            <hr>
-    
+            <div class="row">
+              <div class="col-4 col-md-2">
+                <img id="fotoTrabEstProList" [src]="estudio.urlImage">
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="titulo-exp-per">
+                  <h4>{{ estudio.name_esc }}</h4>
+                  <h5>{{ estudio.title }}</h5>
+                  <p>{{ estudio.dateStart }} - {{ estudio.dateEnd }}</p>
+              </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-9">
+                  <ul class="exp-descripcion">
+                    <li>
+                        {{estudio.description}}<br>
+                        <ul>
+                          <li>{{estudio.tecnologias}}</li>
+                        </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>    
 </div>
+<hr>
 
 <!-- Modal -->
 <div class="modal fade" [id]="'Modal'+estudio.id+'Estudios'" tabindex="-1" aria-labelledby="skillModalLabel" aria-hidden="true">
@@ -129,4 +129,4 @@
       </div>
     </div>
   </div>
-</div>
+

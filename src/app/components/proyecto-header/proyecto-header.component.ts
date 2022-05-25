@@ -37,7 +37,7 @@ export class ProyectoHeaderComponent implements OnInit {
 
   onSubmit() {
     if (!this.name) {
-      alert('Por favor, añade el nombre del Proyecto');
+      alert('Por favor, ingrese el nombre del Proyecto');
       return;
     }
     const newProyecto = {

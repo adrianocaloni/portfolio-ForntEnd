@@ -12,7 +12,6 @@
   div#profile-background{
     display:flex;
     z-index: 1;
- 
   }
  
   .profile-image{
@@ -79,17 +78,7 @@
     justify-content: space-between;
     margin:0px;
   }
-  div#info-red ul#info-redes{
-    width: 250px;
-    list-style: none;
-    flex-shrink: 0;
-  }
-  div#info-red ul#info-redes li a {
-    color: rgb(0, 0, 0);
-    display: flex;
-    text-decoration: none;
-    float: left; 
-  }   
+  
   div#info-red ul#info-redes li a img {
     width:32px;
     height:32px;
@@ -114,18 +103,16 @@
     height:100px;
   }
   
-
 img.redes{
-  width: 50px;
-    height: 50px
+  width: 35px;
+  height: 35px;
 }
 
 img#fotoTrabEstProList {
   border: 5px outset;
   border-color: #e1e1e1;
-  margin-bottom: 15px;
-  margin-top: 15px;
   border-radius: 15px;
+  width: 120px;;
 }
 
 .fotoTrabEstProList{
@@ -136,15 +123,15 @@ img#fotoTrabEstProList {
   border-radius: 15px;
 }
 
-div#profile-background img{
+div#profile-background img {
   width: 99%;
   border: 2px outset;
   border-color: #e1e1e1;
   border-radius: 15px;
-  height:450px;
-  
-
+  height: 450px;
+  margin-top: 15px;
 }
+
 .container-fluid {
   position:relative;      
   box-shadow: 0 10px 6px -1px #777;
@@ -154,10 +141,11 @@ h5.card-title {
   font-family: monospace;
 }
 
-#datosCabecera{
-  font-size: 20px;
+span.navbar-brand {
+  font-size: 25px;
 }
 
-span.navbar-brand {
-  font-size: 32px;
+img#datosContacto {
+  width: 34px;
 }
+

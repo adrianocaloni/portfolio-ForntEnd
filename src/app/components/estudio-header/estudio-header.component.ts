@@ -32,7 +32,7 @@ export class EstudioHeaderComponent implements OnInit {
 
   onSubmit() {
     if (!this.name_esc) {
-      alert('Por favor, añade el nombre de una Escuela');
+      alert('Por favor, ingrese el nombre de la Institución');
       return;
     }
     const newEstudio = {

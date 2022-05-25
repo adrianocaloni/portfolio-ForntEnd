@@ -12,7 +12,6 @@ export class TrabajoHeaderComponent implements OnInit {
 
   @Input()
   trabajo!: Trabajo;
-  title: string = 'Experiencia Laboral';
   @Output() onGuardarTrabajo: EventEmitter<Trabajo> = new EventEmitter();
 
   
@@ -32,7 +31,7 @@ export class TrabajoHeaderComponent implements OnInit {
 
   onSubmit() {
     if (!this.name_job) {
-      alert('Por favor, añade el nombre de una Empresa');
+      alert('Por favor, ingrese el nombre de una Empresa');
       return;
     }
     

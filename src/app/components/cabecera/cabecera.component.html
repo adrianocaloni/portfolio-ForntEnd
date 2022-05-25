@@ -3,62 +3,46 @@
         <div id="argentinaPrograma">
             <img src="./assets/argentina.jpg">
         </div> 
-
-            <ul id="info-redes">
-                <li><a href="https://www.linkedin.com/in/adriano-jeremias-caloni/" target="_blank">
+        <div class="row">
+            <div class="col">
+                <a href="https://www.linkedin.com/in/adriano-jeremias-caloni/" target="_blank">
                     <img class ="redes" src="./assets/icons8-linkedin-64.png">
-                </a></li>
-                <li><a href="https://www.instagram.com/adriano_jere.c/"  target="_blank">
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://www.instagram.com/adriano_jere.c/"  target="_blank">
                     <img class ="redes" src="./assets/800px-Instagram-Icon.png">
-                </a></li>
-                <li><a href="https://twitter.com/AdrianoCaloni"  target="_blank">
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://twitter.com/AdrianoCaloni"  target="_blank">
                     <img class ="redes" src="./assets/icons8-twitter-64.png">
-                </a></li>
-                <li>
-                    
-                    <i class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#ModalInicioSesion" *ngIf="!loading">Ingresar</i>  
-                </li>
-                <li>
-                    <diV  *ngIf="loading" >
-                        <i class="btn btn-outline-secondary" (click)="logout()">Salir</i>  
-                    </diV>
-                    <div class="row" *ngIf="errorInicio">    
-                        <label class="float-right" style="color:red;">Usuario o password incorrecto</label>
-                    </div>
-                    
-                </li>
-            </ul>
+                </a>
+            </div>
+            <div class="col">
+                <i class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#ModalInicioSesion" *ngIf="!loading">Ingresar</i>  
+                <diV  *ngIf="loading" >
+                    <i class="btn btn-outline-secondary" (click)="logout()">Salir</i>  
+                </diV>
+            </div>
+          </div>
         </div>  
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="errorInicio">    
+                    <h5 class="float-right" style="color:red;">Usuario o Password incorrecto</h5>
+                </div>
         
             <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="btnEidt" *ngIf="loading" >
                 <i class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#portadaFotolModal"></i> 
-            </div><br><br><br><br><br>
+            </div>
             <div *ngFor="let perfil of perfil">
 
                 <div id="profile-background">
                     <img class="profile-image card-img-top card-img-top" [src]="perfil.urlImagePortada"  alt="perfil" alt="portada"> 
                 
             </div>
-    
-    
-   <div class="card mat-card experiencia">
-        <app-perfil [loading]="loading"></app-perfil>
-    </div>
-    
-    <div class="card mat-card experiencia">
-        <app-trabajos [loading]="loading"></app-trabajos>
-    </div>
-    <div class="card mat-card experiencia">
-        <app-estudios [loading]="loading" ></app-estudios>
-    </div>
-    
-    <div class="card mat-card experiencia">
-        <app-skills  [loading]="loading"></app-skills>
-    </div>
-    <div class="card mat-card experiencia">
-        <app-proyectos [loading]="loading"></app-proyectos>
-    </div>
-    
+            
+
+
     
 <!-- Modal Inicio Sesion -->
 <div class="modal fade" id="ModalInicioSesion" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -91,7 +75,7 @@
                 </div><br>
                 <div class="row">
                     <div class="col-md-12">
-                        <input class="btn btn-success float-right" type="submit"  data-bs-dismiss="modal" value="Ingesar">
+                        <input class="btn btn-success float-right" type="submit"  data-bs-dismiss="modal" value="Aceptar">
                     </div>
                 </div>
 
@@ -133,3 +117,23 @@
     </div>
 </div>
 </div>
+
+    
+<div class="card mat-card experiencia">
+    <app-perfil [loading]="loading"></app-perfil>
+</div>
+
+<div class="card mat-card experiencia">
+    <app-trabajos [loading]="loading"></app-trabajos>
+</div>
+<div class="card mat-card experiencia">
+    <app-estudios [loading]="loading" ></app-estudios>
+</div>
+
+<div class="card mat-card experiencia">
+    <app-skills  [loading]="loading"></app-skills>
+</div>
+<div class="card mat-card experiencia">
+    <app-proyectos [loading]="loading"></app-proyectos>
+</div>
+    

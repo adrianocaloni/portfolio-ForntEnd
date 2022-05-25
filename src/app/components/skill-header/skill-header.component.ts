@@ -28,7 +28,7 @@ export class SkillHeaderComponent implements OnInit {
 
   onSubmit() {
     if (!this.name_skill) {
-      alert('Por favor, añade el nombre del Skill');
+      alert('Por favor, ingrese la Skill - Hard or Soft');
       return;
     }
     const newSkill = {
