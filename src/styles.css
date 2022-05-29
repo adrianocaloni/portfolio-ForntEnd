@@ -109,10 +109,12 @@ img.redes{
 }
 
 img#fotoTrabEstProList {
-  border: 5px outset;
-  border-color: #e1e1e1;
-  border-radius: 15px;
-  width: 120px;;
+  border: 3px outset;
+  border-color: #ededed;
+  border-radius: 9px;
+  width: 120px;
+  position: relative;
+  box-shadow: 0 12px 9px -2px #777;
 }
 
 .fotoTrabEstProList{
@@ -120,7 +122,9 @@ img#fotoTrabEstProList {
   border-color: #e1e1e1;
   margin-bottom: 15px;
   margin-top: 15px;
-  border-radius: 15px;
+  border-radius: 9px;
+  position: relative;
+  box-shadow: 0 12px 9px -2px #777;
 }
 
 div#profile-background img {

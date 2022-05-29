@@ -31,17 +31,24 @@
                     <h5 class="float-right" style="color:red;">Usuario o Password incorrecto</h5>
                 </div>
         
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="btnEidt" *ngIf="loading" >
-                <i class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#portadaFotolModal"></i> 
-            </div>
-            <div *ngFor="let perfil of perfil">
-
-                <div id="profile-background">
-                    <img class="profile-image card-img-top card-img-top" [src]="perfil.urlImagePortada"  alt="perfil" alt="portada"> 
-                
+            
+            <div class="card mat-card experiencia">
+                <app-perfil [loading]="loading"></app-perfil>
             </div>
             
-
+            <div class="card mat-card experiencia">
+                <app-trabajos [loading]="loading"></app-trabajos>
+            </div>
+            <div class="card mat-card experiencia">
+                <app-estudios [loading]="loading" ></app-estudios>
+            </div>
+            
+            <div class="card mat-card experiencia">
+                <app-skills  [loading]="loading"></app-skills>
+            </div>
+            <div class="card mat-card experiencia">
+                <app-proyectos [loading]="loading"></app-proyectos>
+            </div>
 
     
 <!-- Modal Inicio Sesion -->
@@ -84,56 +91,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-<!-- Modal Foto Portada:-->
-<div class="modal fade" id="portadaFotolModal" tabindex="-1" aria-labelledby="portadaFotoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="perfilModalLabel">Editar Imágen de Portada</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-            <div class="modal-body">
-                <form>
-                    <div class="row mb-3 d-flex justify-content-center">
-                    <div class="form-floating">
-                        <input type="text" name="fotoPortada" id="fotoPortada" 
-                        [(ngModel)]="perfil.urlImagePortada" 
-                            class="form-control " />
-                            <label for="floatingInput">Imágen de Portada</label>
-                    </div >
-                    </div>
-                    <div class="row">
-                        <div class="modal-footer">
-                            <div class="d-grid gap-2 col-4 mx-auto">
-                                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close" (click)="updatePortadaPerfil(perfil, perfil.id)">Guardar</button>
-                            </div>
-                        </div>   
-                    </div>
-                </form>
-            </div>
-    </div>
-    </div>
-</div>
 </div>
 
-    
-<div class="card mat-card experiencia">
-    <app-perfil [loading]="loading"></app-perfil>
-</div>
 
-<div class="card mat-card experiencia">
-    <app-trabajos [loading]="loading"></app-trabajos>
-</div>
-<div class="card mat-card experiencia">
-    <app-estudios [loading]="loading" ></app-estudios>
-</div>
-
-<div class="card mat-card experiencia">
-    <app-skills  [loading]="loading"></app-skills>
-</div>
-<div class="card mat-card experiencia">
-    <app-proyectos [loading]="loading"></app-proyectos>
-</div>
-    

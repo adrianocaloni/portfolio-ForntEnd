@@ -1,6 +1,13 @@
 
 <div id="info-data" >
     <div *ngFor="let perfil of perfil">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="btnEidt" *ngIf="loading" >
+            <i class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#portadaFotolModal"></i> 
+        </div>
+        <div id="profile-background">
+            <img class="profile-image card-img-top card-img-top" [src]="perfil.urlImagePortada"  alt="perfil" alt="portada"> 
+        </div>
+        
         <div id="info-img">
             <img class="profile-image card-img-top" [src]="perfil.urlImage"  alt="perfil">
             <div  *ngIf="loading">
@@ -8,6 +15,7 @@
             </div>
             
         </div>
+        
         <div *ngIf="loading" class="d-grid gap-2 d-md-flex justify-content-md-end" >
             <i id="btnEditar" class="fa fa-pencil-square-o btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#perfilModal" ></i>  
         </div><br>
@@ -58,7 +66,38 @@
         <div>
                      
         </div>
+            <!-- Modal Foto Portada:-->
+            <div class="modal fade" id="portadaFotolModal" tabindex="-1" aria-labelledby="portadaFotoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="perfilModalLabel">Editar Imágen de Portada</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row mb-3 d-flex justify-content-center">
+                                <div class="form-floating">
+                                    <input type="text" name="fotoPortada" id="fotoPortada" 
+                                    [(ngModel)]="perfil.urlImagePortada" 
+                                        class="form-control " />
+                                        <label for="floatingInput">Imágen de Portada</label>
+                                </div >
+                                </div>
+                                <div class="row">
+                                    <div class="modal-footer">
+                                        <div class="d-grid gap-2 col-4 mx-auto">
+                                            <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" aria-label="Close" (click)="updatePerfil(perfil, perfil.id)">Guardar</button>
+                                        </div>
+                                    </div>   
+                                </div>
+                            </form>
+                        </div>
+                </div>
+                </div>
+            </div>
 
+   
             <!-- Modal Foto Perfíl:-->
             <div class="modal fade" id="perfiFotolModal" tabindex="-1" aria-labelledby="perfilFotoModalLabel" aria-hidden="true">
                 <div class="modal-dialog">

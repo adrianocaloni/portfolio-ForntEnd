@@ -19,14 +19,14 @@ export class ProyectosService {
   constructor(private http: HttpClient) { }
 
   //Proyectos
-getProyectos(): Observable<Proyecto[]> {
-  const urlJob = `${this.urlProyect}/person/${1}`;
+getProyectos(id:any): Observable<Proyecto[]> {
+  const urlJob = `${this.urlProyect}/person/${id}`;
   return this.http.get<Proyecto[]>(urlJob)
 }
 
 //Crear Proyecto
-addProyecto(proyecto: Proyecto): Observable<Proyecto>{
-  const urlJOb = `${this.urlProyect}/person/${1}`;
+addProyecto(proyecto: Proyecto, id:any): Observable<Proyecto>{
+  const urlJOb = `${this.urlProyect}/person/${id}`;
   return this.http.post<Proyecto>(urlJOb, proyecto)
 }
 

@@ -14,7 +14,7 @@ export class TrabajoListComponent implements OnInit {
   trabajo!: Trabajo;
   @Input()
   loading!: boolean;
-
+  
 
   @Output() onEliminarTrabajo: EventEmitter<Trabajo> = new EventEmitter();
   @Output() onEditarTrabajo: EventEmitter<Trabajo> = new EventEmitter();

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { Trabajo } from 'src/app/models/Trabajo';
+import { User } from 'src/app/models/User';
 import { TrabajosService } from 'src/app/services/trabajos.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class TrabajosComponent implements OnInit {
   trabajos: Trabajo[] = []; 
   @Input()
   loading!: boolean;
-
+  
   constructor(private trabajoService: TrabajosService) { }
 
   ngOnInit(): void {

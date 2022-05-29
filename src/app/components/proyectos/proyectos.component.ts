@@ -11,12 +11,13 @@ export class ProyectosComponent implements OnInit {
   proyectos: Proyecto[] = []; 
   @Input()
   loading!: boolean;
+  id:any = 1;
 
   constructor(private proyectoService: ProyectosService) { }
 
   ngOnInit(): void {
      this.proyectoService
-     .getProyectos()
+     .getProyectos(this.id)
      .subscribe((proyectos: Proyecto[]) => (this.proyectos = proyectos));
    }
   
@@ -30,7 +31,7 @@ export class ProyectosComponent implements OnInit {
 
   agregarProyecto(proyecto: Proyecto){
     this.proyectoService
-    .addProyecto(proyecto)
+    .addProyecto(proyecto,this.id)
     .subscribe((proyecto) => this.proyectos.push(proyecto));  }
 
     
