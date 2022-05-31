@@ -112,7 +112,7 @@ img#fotoTrabEstProList {
   border-color: #ededed;
   width: 120px;
   position: relative;
-  box-shadow: 0 12px 9px -2px #777;
+  box-shadow: 0 12px 9px -2px #212529;
   margin-left: 35px;
     margin-bottom: 20px;
 }
@@ -123,7 +123,7 @@ img#fotoTrabEstProList {
   margin-bottom: 15px;
   margin-top: 15px;
   position: relative;
-  box-shadow: 0 12px 9px -2px #777;
+  box-shadow: 0 12px 9px -2px #212529;
 }
 
 div#profile-background img {
@@ -134,12 +134,10 @@ div#profile-background img {
   height: 450px;
   margin-top: 15px;
 }
+.progress-bar{
+  background-color: #212529;
+}
 
-.container-fluid {
-  position:relative;      
-  box-shadow: 0 10px 6px -1px #777;
-
-} 
 h5.card-title {
   font-family: monospace;
 }
@@ -151,4 +149,3 @@ span.navbar-brand {
 img#datosContacto {
   width: 34px;
 }
-
