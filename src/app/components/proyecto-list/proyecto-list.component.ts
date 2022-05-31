@@ -47,7 +47,7 @@ export class ProyectoListComponent implements OnInit {
       date_end: proyecto.date_end,
       urlImage: proyecto.urlImage,
       description: proyecto.description,
-      portfolio: "./assets/icons8-git-48.png",
+      portfolio: "./assets/icons8-github-48.png",
       urlImagePort: proyecto.urlImagePort,
       presentacion: "./assets/icons8-video-48.png",
       urlImageVideo: proyecto.urlImageVideo,

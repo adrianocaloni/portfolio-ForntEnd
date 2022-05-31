@@ -139,7 +139,7 @@
                         <form>
                             <div class="row mb-3 d-flex justify-content-center">
                             <div class="form-floating">
-                                <input type="text" name="nombre" id="textoExperiencia" 
+                                <input type="text" name="nombre" id="nombre" 
                                 [(ngModel)]="perfil.nombre" 
                                 class="form-control " />
                                 <label for="floatingInput">Nombre</label>
@@ -148,7 +148,7 @@
 
                            <div class="row mb-3 d-flex justify-content-center" >
                             <div class="form-floating">
-                                <input type="text" name="apellido" id="fechaExperiencia"
+                                <input type="text" name="apellido" id="apellido"
                                     [(ngModel)]="perfil.apellido" 
                                     class="form-control" />
                                     <label for="floatingInput">Apellido</label>
@@ -156,7 +156,15 @@
                             </div>
                             <div class="row mb-3 d-flex justify-content-center" >
                                 <div class="form-floating">
-                                    <input type="text" name="celular" id="fechaExperiencia"
+                                    <input type="text" name="titulo" id="titulo"
+                                        [(ngModel)]="perfil.titulo" 
+                                        class="form-control" />
+                                        <label for="floatingInput">Título</label>
+                                </div> 
+                            </div>
+                            <div class="row mb-3 d-flex justify-content-center" >
+                                <div class="form-floating">
+                                    <input type="text" name="celular" id="celular"
                                         [(ngModel)]="perfil.celular" 
                                         class="form-control" />
                                         <label for="floatingInput">Celular</label>
@@ -164,7 +172,7 @@
                             </div>
                             <div class="row mb-3 d-flex justify-content-center" >
                                 <div class="form-floating">
-                                    <input type="text" name="email" id="fechaExperiencia"
+                                    <input type="text" name="email" id="email"
                                         [(ngModel)]="perfil.email" 
                                         class="form-control" />
                                         <label for="floatingInput">Email</label>
@@ -172,7 +180,7 @@
                             </div>
                             <div class="row mb-3 d-flex justify-content-center" >
                                 <div class="form-floating">
-                                    <input type="text" name="localidad" id="fechaExperiencia"
+                                    <input type="text" name="localidad" id="localida"
                                         [(ngModel)]="perfil.localidad" 
                                         class="form-control" />
                                         <label for="floatingInput">Localidad</label>
@@ -180,7 +188,7 @@
                             </div>
                             <div class="row mb-3 d-flex justify-content-center">
                             <div class="form-floating">
-                                <textarea type="text" name="fecha" id="horaExperiencia"
+                                <textarea type="text" name="desc" id="desc"
                                     [(ngModel)]="perfil.descripcion" 
                                     class="form-control "></textarea>
                                     <label for="floatingInput"> Descripción</label>
