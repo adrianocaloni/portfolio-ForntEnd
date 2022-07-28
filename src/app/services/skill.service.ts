@@ -13,7 +13,9 @@ const htttOptions = {
   providedIn: 'root'
 })
 export class SkillService {
+  
   private urlSkill:string = 'https://afternoon-sands-15469.herokuapp.com/api/skill'
+  //'http://localhost:8080/api/skill'
 
   constructor(private http: HttpClient) { }
 

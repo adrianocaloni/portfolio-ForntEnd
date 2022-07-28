@@ -15,8 +15,8 @@ const htttOptions = {
 })
 export class EstudiosService {
 
-
   private urlEducation:string = 'https://afternoon-sands-15469.herokuapp.com/api/education'
+  //'http://localhost:8080/api/education' 
 
   constructor(private http: HttpClient) { }
 
@@ -48,7 +48,7 @@ deleteEstudio(estudio:Estudio): Observable<Estudio> {
 }
 
 
-//Actualizar Estudios --> NO FUNCIONA
+//Actualizar Estudios
 updateEstudio(estudio: Estudio, id:any): Observable<Estudio>{
   console.log("hola")
   const urlEdu = `${this.urlEducation}/${id}`;

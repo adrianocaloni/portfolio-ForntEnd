@@ -16,8 +16,9 @@ const htttOptions = {
 
 export class PortfolioService {
 
-private url:string = 'https://afternoon-sands-15469.herokuapp.com/api/person'
-public loading:boolean = false;
+  private url:string ='https://afternoon-sands-15469.herokuapp.com/api/person'
+  //'http://localhost:8080/api/person'
+  public loading:boolean = false;
 
 constructor(private http: HttpClient) { }
 
@@ -25,6 +26,7 @@ constructor(private http: HttpClient) { }
 getPerfil(): Observable<Perfil[]> {
   const urlAll = `${this.url}/all`;
   return this.http.get<Perfil[]>(urlAll)
+  
 }
 //Actualizar Perfil
 editPerfil(perfil: Perfil, id:any): Observable<Perfil>{

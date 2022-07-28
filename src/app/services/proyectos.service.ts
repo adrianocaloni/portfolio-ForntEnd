@@ -15,10 +15,10 @@ const htttOptions = {
 export class ProyectosService {
 
   private urlProyect:string = 'https://afternoon-sands-15469.herokuapp.com/api/project'
-
+  //'http://localhost:8080/api/project' 
   constructor(private http: HttpClient) { }
 
-  //Proyectos
+//Proyectos
 getProyectos(id:any): Observable<Proyecto[]> {
   const urlJob = `${this.urlProyect}/person/${id}`;
   return this.http.get<Proyecto[]>(urlJob)

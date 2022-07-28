@@ -20,6 +20,7 @@ loginUser(usuario:any){
     })
   }
   return this.http.post<any>("https://afternoon-sands-15469.herokuapp.com/usuario/login",usuario,httpOptions)
+  //http://localhost:8080/usuario/login
 }
 
 setLogin(login: boolean){

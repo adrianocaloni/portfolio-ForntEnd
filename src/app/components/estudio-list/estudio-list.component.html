@@ -44,7 +44,7 @@
             <form class="card mat-card experiencia" >
                 <div class="row mb-3 d-flex justify-content-center">
                   <div class="form-floating">
-                    <input type="text" name="nombre" id="trabajoEmp" 
+                    <input type="text" name="nombre" id="estudioNom" 
                     [(ngModel)]="estudio.name_esc" 
                     class="form-control " />
                     <label for="floatingInput">Institución</label>
@@ -53,7 +53,7 @@
 
                 <div class="row mb-3 d-flex justify-content-center" >
                   <div class="form-floating">
-                    <input type="text" name="titulo" id="trabajoCargo"
+                    <input type="text" name="titulo" id="estudioCargo"
                           [(ngModel)]="estudio.title" 
                           class="form-control" />
                           <label for="floatingInput">Titulo</label>
@@ -62,7 +62,7 @@
                 
                 <div class="row mb-3 d-flex justify-content-center" >
                     <div class="form-floating">
-                      <input type="text" name="dateStart" id="trabajoCargo"
+                      <input type="text" name="dateStart" id="estudioIni"
                             [(ngModel)]="estudio.dateStart" 
                             class="form-control" />
                             <label for="floatingInput">Fecha Inicio</label>
@@ -71,7 +71,7 @@
 
                   <div class="row mb-3 d-flex justify-content-center" >
                     <div class="form-floating">
-                      <input type="text" name="dateEnd" id="trabajoCargo"
+                      <input type="text" name="dateEnd" id="estudioFin"
                             [(ngModel)]="estudio.dateEnd" 
                             class="form-control" />
                             <label for="floatingInput">Fecha Fin</label>
@@ -81,7 +81,7 @@
                   
                   <div class="row mb-3 d-flex justify-content-center" >
                     <div class="form-floating">
-                      <textarea type="text" name="dsc" id="trabajoCargo"
+                      <textarea type="text" name="dsc" id="estudioDsc"
                             [(ngModel)]="estudio.description" 
                             class="form-control" ></textarea>
                             <label for="floatingInput">Descripción</label>
@@ -90,7 +90,7 @@
 
                   <div class="row mb-3 d-flex justify-content-center" >
                     <div class="form-floating">
-                      <textarea type="text" name="tecnologias" id="trabajoCargo"
+                      <textarea type="text" name="tecnologias" id="estudioTec"
                             [(ngModel)]="estudio.tecnologias" 
                             class="form-control" ></textarea>
                             <label for="floatingInput">Tecnologías</label>
