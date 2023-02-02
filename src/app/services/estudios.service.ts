@@ -15,9 +15,10 @@ const htttOptions = {
 })
 export class EstudiosService {
 
-  private urlEducation:string = 'https://afternoon-sands-15469.herokuapp.com/api/education'
+  private urlEducation:string = 'https://domestic-tammie-caloniadrianoj.koyeb.app/api/education'
   //'http://localhost:8080/api/education' 
-
+  //'https://ancient-gorge-89370.herokuapp.com/api/education'
+ 
   constructor(private http: HttpClient) { }
 
   

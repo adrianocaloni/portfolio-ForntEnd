@@ -16,7 +16,7 @@ const htttOptions = {
 
 export class PortfolioService {
 
-  private url:string ='https://afternoon-sands-15469.herokuapp.com/api/person'
+  private url:string ='https://domestic-tammie-caloniadrianoj.koyeb.app/api/person'
   //'http://localhost:8080/api/person'
   public loading:boolean = false;
 

@@ -17,7 +17,7 @@ const htttOptions = {
 export class TrabajosService {
 
 
-  private urlTrabajo:string = 'https://afternoon-sands-15469.herokuapp.com/api/job'
+  private urlTrabajo:string = 'https://domestic-tammie-caloniadrianoj.koyeb.app/api/job'
   //'http://localhost:8080/api/job' 
 
   constructor(private http: HttpClient) { }

@@ -14,7 +14,7 @@ const htttOptions = {
 })
 export class ProyectosService {
 
-  private urlProyect:string = 'https://afternoon-sands-15469.herokuapp.com/api/project'
+  private urlProyect:string = 'https://domestic-tammie-caloniadrianoj.koyeb.app/api/project'
   //'http://localhost:8080/api/project' 
   constructor(private http: HttpClient) { }
 
